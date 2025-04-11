@@ -8,13 +8,15 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM,GRU
-from keras import optimizers
-from keras.models import load_model
-from keras.models import model_from_json
-from keras.utils.vis_utils import plot_model
+
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import LSTM, GRU
+from tensorflow.keras import optimizers
+from tensorflow.keras.models import load_model
+from tensorflow.keras.models import model_from_json
+from tensorflow.keras.utils import plot_model
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -32,7 +34,7 @@ opt_hiddennode=1000   #1000,500,250,125
 opt_epoch=100        #20,40,60,80,100,120,140,160,180，200
 opt_batchsize=72
 opt_loss='mae'   #'mse''mape''msle',squared_hinge,categorical_hinge,binary_crossentropy
-opt_optimizer=optimizers.Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+opt_optimizer=optimizers.Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
                      #SGD(lr=0.01, momentum=0.0, decay=0.0, nesterov=False)
                      # RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
                       #(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
